@@ -27,3 +27,4 @@ boxs.forEach((box) => {
     box.disabled = true;
   });
 });
+
