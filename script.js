@@ -12,7 +12,10 @@ const winPatterns = [
   [0, 4, 8],
   [2, 4, 6],
 ];
-
+let i=0;
 boxs.forEach((box) => {
   box.innerText = i++;
+  box.addEventListener("click",()=>{
+    console.log("This is click");
+  })
 });
