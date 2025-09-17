@@ -1,54 +1,55 @@
 * {
-    margin: 0;
-    padding: 0;
-    background-color: #69A197;
-    padding-top: 1vmin;
+  margin: 0;
+  padding: 0;
+  background-color: #69a197;
+  padding-top: 1vmin;
 }
 
 h1 b {
-    font-size: larger;
+  font-size: larger;
 }
 
 .game {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-    margin-top: 7vmin;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    width: 60vw;
+  margin-top: 2vmin;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 70vh;
+  width: 40vw;
 }
 
 .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vmin;
-    width: 30vmin;
-    border: none;
-    text-align: center;
-    background-color: #fffafa;
-    border-radius: 10%;
-    font-size: 80px;
-    color: #BF211E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vmin;
+  width: 20vmin;
+  border: none;
+  text-align: center;
+  background-color: #fffafa;
+  border-radius: 10%;
+  font-size: 80px;
+  color: #bf211e;
+  box-shadow: 0 0 5vmin rgba(255, 255, 255, 0.3);
 }
 
 #reset {
-    margin-top: 6vmin;
-    border: none;
-    background-color: rgb(176, 223, 81);
-    height: 5vmin;
-    width: 15vmin;
-    border-radius: 8px;
-    font-size: larger;
-    padding-bottom: 5px;
+  margin-top: 6vmin;
+  border: none;
+  background-color: rgb(176, 223, 81);
+  height: 3rem;
+  width: 10rem;
+  border-radius: 8px;
+  font-size: larger;
+  padding-bottom: 5px;
 }
