@@ -16,7 +16,7 @@ const winPatterns = [
 boxs.forEach((box) => {
   box.addEventListener("click", () => {
     if (turnO) {
-      box.innerText = "O";
+      box.innerText = "0";
       turnO = false;
       box.disabled = true;
     } else {
@@ -25,6 +25,19 @@ boxs.forEach((box) => {
       box.disabled = true;
     }
     box.disabled = true;
+    checkWinner();
   });
 });
 
+const checkWinner = () => {
+  for (let pattern of winPatterns) {
+    let pos1Val = boxs[pattern[0]].innerText;
+    let pos2Val = boxs[pattern[1]].innerText;
+    let pos3Val = boxs[pattern[2]].innerText;
+    if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
+      if (pos1Val == pos2Val && pos2Val == pos3Val) {
+        alert("Winner");
+      }
+    }
+  }
+};
