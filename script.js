@@ -1,5 +1,8 @@
 let boxs = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset");
+let newGameBtn=document.querySelector('#newGame');
+let msgContainer = document.querySelector('.msg-container');
+let msg=document.querySelector('#msg-winner')
 
 let turnO = true;
 const winPatterns = [
@@ -36,8 +39,8 @@ const checkWinner = () => {
     let pos3Val = boxs[pattern[2]].innerText;
     if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
       if (pos1Val == pos2Val && pos2Val == pos3Val) {
-        alert("Winner");
-      }
+        console.log("winner", pos1Val);
+      } 
     }
   }
 };
