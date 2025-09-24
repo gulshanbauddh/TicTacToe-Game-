@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade</title>
     <style>
-        #calculate{
-            font-size: 800px;
-            /* Pal Bhai */
+        #calculate {
+            font-size: 40px;
         }
     </style>
 </head>
@@ -20,8 +19,8 @@
         let grade;
         let per = prompt("Enter percentage");
         if (per <= 100 & per > 90) {
-            alert("Grade=" + grade + " and Percentageis =" + per);
             grade = "A";
+            alert("Grade=" + grade + " and Percentageis =" + per);
         } else if (per <= 90 && per > 80) {
             grade = "B";
             alert("Grade=" + grade + " and Percentageis =" + per);
