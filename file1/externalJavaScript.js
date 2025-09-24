@@ -1,6 +1,6 @@
-// // function greet(){
-// //     alert("Hello from External JS");
-// // }
+function greet(){
+    alert("Hello from External JS");
+}
 
 // // Variables Practice
 // // var
