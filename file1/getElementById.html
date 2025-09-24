@@ -21,50 +21,17 @@
 
 <body>
   <div>
-    <button onclick="red()" class="color">click me for Red</button>
-    <button onclick="blue()" class="color">click me for Blue</button>
-    <button onclick="yellow()" class="color">click me for Yellow</button>
-    <button onclick="pink()" class="color">click me for Pink</button>
-    <button onclick="black()" class="color">click me for Black</button>
-    <button onclick="bgBrown()" class="color">click me for body background Brown</button>
-    <button onclick="allBlack()" class="color">click me for all Aqua</button>
-    <button onclick="allReal()" class="color">click me for all Real Colour</button>
+    <button onclick="red()" id="color1">click me for Red</button>
+    <button onclick="blue()" id="color2">click me for Blue</button>
+    <button onclick="yellow()" id="color3">click me for Yellow</button>
+    <button onclick="pink()" id="color4">click me for Pink</button>
+    <button onclick="black()" id="color5">click me for Black</button>
+
   </div>
   <script>
-    let buttons = document.getElementsByClassName("color");
-    function red() {
-      buttons[0].style.backgroundColor = 'red';
+    red(){
+      document.getElementById("color1").style
     }
-    function blue() {
-      buttons[1].style.backgroundColor = "blue";
-    }
-    function yellow() {
-      buttons[2].style.backgroundColor = "yellow";
-    }
-    function pink() {
-      buttons[3].style.backgroundColor = "pink";
-    }
-    function black() {
-      buttons[4].style.backgroundColor = "black";
-    }
-
-    function bgBrown() {
-      document.body.style.backgroundColor = "brown";
-      buttons[6].style.backgroundColor = "black";
-    }
-    function allBlack() {
-      for (let btn = 0; btn <= 7; btn++) {
-        buttons[btn].style.backgroundColor = "aqua";
-      }
-    }
-    function allReal() {
-      for (let btn = 0; btn <= 7; btn++) {
-        buttons[btn].style.backgroundColor = "white";
-
-      }
-    }
-
-
   </script>
 </body>
 
