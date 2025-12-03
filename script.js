@@ -1,46 +1,69 @@
-let boxs = document.querySelectorAll(".box");
-let resetBtn = document.querySelector("#reset");
-let newGameBtn=document.querySelector('#newGame');
-let msgContainer = document.querySelector('.msg-container');
-let msg=document.querySelector('#msg-winner')
+const boxs = document.querySelectorAll(".boxs");
+const message = document.getElementById("message");
+const newGameBtn = document.getElementById("newGame");
+const playAgainBtn = document.getElementById("playAgain");
+const xWinCount = document.getElementById("xWin");
+const oWinCount = document.getElementById("oWin");
+let chance = "O";
 
-let turnO = true;
-const winPatterns = [
+// winning patern-
+const winPatern = [
   [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
   [0, 3, 6],
+  [0, 4, 8],
   [1, 4, 7],
   [2, 5, 8],
-  [0, 4, 8],
   [2, 4, 6],
+  [3, 4, 5],
+  [6, 7, 8]
 ];
 
+// alternate X & O
 boxs.forEach((box) => {
   box.addEventListener("click", () => {
-    if (turnO) {
-      box.innerText = "0";
-      turnO = false;
-      box.disabled = true;
+    if (chance == "O") {
+      box.innerHTML = chance;
+      checkWin();
+      chance = "X";
     } else {
-      box.innerText = "X";
-      turnO = true;
-      box.disabled = true;
+      box.innerHTML = chance;
+      checkWin();
+      chance = "O";
     }
     box.disabled = true;
-    checkWinner();
   });
 });
 
-const checkWinner = () => {
-  for (let pattern of winPatterns) {
-    let pos1Val = boxs[pattern[0]].innerText;
-    let pos2Val = boxs[pattern[1]].innerText;
-    let pos3Val = boxs[pattern[2]].innerText;
-    if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
-      if (pos1Val == pos2Val && pos2Val == pos3Val) {
-        console.log("winner", pos1Val);
-      } 
+// check winning
+function checkWin() {
+  winPatern.forEach((patern) => {
+    let check0 = boxs[patern[0]].innerHTML;
+    let check1 = boxs[patern[1]].innerHTML;
+    let check2 = boxs[patern[2]].innerHTML;
+    if (check0 == chance && check1 == chance && check2 == chance) {
+      message.innerHTML = "Winner is : " + chance;
+      message.style.display = "block";
+      if (chance === "X")
+        xWinCount.textContent = parseInt(xWinCount.textContent) + 1;
+      else
+        oWinCount.textContent = parseInt(oWinCount.textContent) + 1;
+      boxs.forEach((box) => box.disabled = true);
     }
-  }
-};
+  })
+}
+// Play Again
+playAgainBtn.addEventListener("click", () => {
+  boxs.forEach((box) => {
+    box.innerHTML = "";
+    box.disabled = false;
+  })
+})
+// New Game
+newGameBtn.addEventListener("click", () => {
+  boxs.forEach((box) => {
+    box.innerHTML = "";
+    oWinCount.textContent = 0
+    xWinCount.textContent = 0
+    box.disabled = false;
+  })
+})
