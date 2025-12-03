@@ -92,6 +92,13 @@ main {
   color: black;
 }
 
+.winCount {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
 /* Responsive */
 @media (min-width: 700px) {
 
@@ -134,13 +141,17 @@ main {
     font-size: 20px;
     border-radius: 5px;
   }
-  .boxs{
+
+  .boxs {
     font-size: 70px;
   }
-  #message, h1{
+
+  #message,
+  h1 {
     font-size: 40px;
-  }  
-  h1{
+  }
+
+  h1 {
     font-size: 60px;
   }
 }
