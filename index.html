@@ -2,35 +2,41 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="./style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tik Tok Toi</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <main>
-    <div class="game">
-      <div class="msg-container hide">
-        <p id="msg-winner">Winner</p>
+    <div class="game-Container">
+      <h1>Tik Tak Toi</h1>
+      <div class="winCount">
+        <p>O Wins: <span id="oWin">0</span></p>
+        <p>X Wins: <span id="xWin">0</span></p>
       </div>
-      <button id="newGame">New game</button>
-      <h1><b>Tic Tac Toe</b>😁😁</h1>
-      <div class="container">
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
+      <div class="container1">
+        <button class="boxs box1"></button>
+        <button class="boxs box2"></button>
+        <button class="boxs box3"></button>
+        <button class="boxs box4"></button>
+        <button class="boxs box5"></button>
+        <button class="boxs box6"></button>
+        <button class="boxs box7"></button>
+        <button class="boxs box8"></button>
+        <button class="boxs box9"></button>
       </div>
-      <button id="reset">Reset Game</button>
+      <div>
+        <p id="message"></p>
+      </div>
+      <div id="controlButton">
+        <button id="newGame">New Game</button>
+        <button id="playAgain">Play Again</button>
+      </div>
     </div>
-    <script src="script.js"></script>
   </main>
+  <script src="./script.js"></script>
 </body>
 
 </html>
