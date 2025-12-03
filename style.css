@@ -1,103 +1,146 @@
 * {
   margin: 0;
   padding: 0;
-  padding-top: 1vmin;
-}
-body {
-  background-color: #69a197;
-}
-h1 b {
-  font-size: larger;
+  box-sizing: border-box;
 }
 
-.game {
+body {
+  background-color: bisque;
+}
+
+.game-Container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 15px;
 }
 
-.container {
-  margin-top: 2vmin;
+main {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container1 {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  height: 70vh;
-  width: 40vw;
+
 }
 
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20vmin;
-  width: 20vmin;
+.boxs {
+  height: 80px;
+  width: 80px;
   border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px red 0.2;
+  background-color: rgb(214, 163, 163);
+  font-size: 40px;
   text-align: center;
-  background-color: #fffafa;
-  border-radius: 10%;
-  font-size: 80px;
-  color: #bf211e;
-  box-shadow: 0 0 5vmin rgba(255, 255, 255, 0.3);
+  color: black;
+  font-weight: 600;
 }
 
-#reset {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #2c2c2c;
-  border-radius: 1rem;
-  border: none;
-  margin-top: 3rem;
-  border: none;
-  color: white;
+.boxs:hover {
+  background-color: rgb(230, 163, 163);
+  cursor: pointer;
 }
+
+#newGame,
+#playAgain {
+  margin-right: 10px;
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
 #newGame {
-  padding: 1rem;
-  font-size: 1.25rem;
-  background-color: #2c2c2c;
-  border-radius: 1rem;
-  border: none;
+  background-color: rgb(255, 0, 0);
   color: white;
-  margin-top: 1rem;
 }
 
-#msg-winner {
+#playAgain {
+  background-color: rgb(36, 179, 36);
   color: white;
-  font-size: 50px;
 }
-@media only screen and (max-width: 1135px) {
-  .container {
-    margin-top: 2vmin;
+
+#newGame:hover {
+  background-color: rgb(204, 0, 0);
+}
+
+#playAgain:hover {
+  background-color: rgb(46, 151, 46);
+}
+
+#message {
+  margin: 10px 0;
+  display: none;
+  font-size: 30px;
+  font-weight: 600;
+  color: black;
+}
+
+/* Responsive */
+@media (min-width: 700px) {
+
+  .game-Container {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    height: 65vh;
+    width: 60vw;
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .game-Container {
+    height: 95vh;
+    width: 60vw;
+    margin-top: 20px;
     gap: 10px;
-    height: 50vh;
-    width: 40vw;
   }
 
-  .box {
-    height: 15vmin;
-    width: 15vmin;
-  }
-}
-@media only screen and (max-width: 376px) {
-  .container {
-    height: 50vh;
-    width: 65vw;
+  .boxs {
+    height: 150px;
+    width: 150px;
   }
 
-  .box {
-    height: 19vmin;
-    width: 19vmin;
+  .container1 {
+    height: 500px;
+    width: 500px;
   }
-}
 
-.hide{
-  display: none;
+  #newGame,
+  #playAgain {
+    margin: 0px 10px;
+    padding: 11px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  .boxs{
+    font-size: 70px;
+  }
+  #message, h1{
+    font-size: 40px;
+  }  
+  h1{
+    font-size: 60px;
+  }
 }
