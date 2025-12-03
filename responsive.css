@@ -1,0 +1,87 @@
+/* Responsive */
+@media (min-width: 700px) {
+  .game-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    height: 65vh;
+    width: 60vw;
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .game-Container {
+    height: 95vh;
+    width: 60vw;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .boxs {
+    height: 130px;
+    width: 130px;
+  }
+  .cruntWin {
+    color: rgb(46, 223, 46);
+  }
+  .container1 {
+    height: 500px;
+    width: 500px;
+  }
+
+  #newGame,
+  #playAgain {
+    margin: 0px 10px;
+    padding: 11px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+
+  .boxs {
+    font-size: 70px;
+  }
+
+  #message,
+  h1 {
+    font-size: 40px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  #userInput {
+    height: 30rem;
+    width: 40rem;
+  }
+  .user input {
+    border: none;
+    border-radius: 5px;
+    height: 4rem;
+    width: 25rem;
+    margin: 10px 0px;
+    font-size: 1.3rem;
+    padding-left: 1rem;
+  }
+  .user {
+    font-size: 2rem;
+  }
+  #startGame {
+    margin-right: 0px;
+    padding: 10px 10px;
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+  #controlButton {
+    margin-top: 1rem;
+  }
+  .winCount {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+}

@@ -1,11 +1,14 @@
 const boxs = document.querySelectorAll(".boxs");
-const message = document.getElementById("message");
 const newGameBtn = document.getElementById("newGame");
 const playAgainBtn = document.getElementById("playAgain");
 const xWinCount = document.getElementById("xWin");
 const oWinCount = document.getElementById("oWin");
+const user1 = document.getElementById("user1");
+const user2 = document.getElementById("user2");
+const playUser1 = document.getElementById("playUser1");
+const playUser2 = document.getElementById("playUser2");
+let currentWinX = true;
 let chance = "O";
-
 // winning patern-
 const winPatern = [
   [0, 1, 2],
@@ -15,7 +18,7 @@ const winPatern = [
   [2, 5, 8],
   [2, 4, 6],
   [3, 4, 5],
-  [6, 7, 8]
+  [6, 7, 8],
 ];
 
 // alternate X & O
@@ -41,29 +44,51 @@ function checkWin() {
     let check1 = boxs[patern[1]].innerHTML;
     let check2 = boxs[patern[2]].innerHTML;
     if (check0 == chance && check1 == chance && check2 == chance) {
-      message.innerHTML = "Winner is : " + chance;
-      message.style.display = "block";
-      if (chance === "X")
+      if (chance === "X") {
         xWinCount.textContent = parseInt(xWinCount.textContent) + 1;
-      else
+        currentWinX = true;
+      } else {
         oWinCount.textContent = parseInt(oWinCount.textContent) + 1;
-      boxs.forEach((box) => box.disabled = true);
+        boxs.forEach((box) => (box.disabled = true));
+        currentWinX = false;
+      }
     }
-  })
+  });
+
+  let p1 = parseInt(xWinCount.textContent);
+  let p2 = parseInt(oWinCount.textContent);
+  const cruntWin = document.querySelector("#cruntWin");
+  if (p1 < p2) cruntWin.textContent = playUser1.textContent;
+  else if (p1 < p2) cruntWin.textContent = playUser2.textContent;
+  else cruntWin.textContent = "n/a";
 }
 // Play Again
 playAgainBtn.addEventListener("click", () => {
   boxs.forEach((box) => {
     box.innerHTML = "";
     box.disabled = false;
-  })
-})
+    // current win for current Win Chance-
+  });
+  if (currentWinX) chance = "X";
+  else chance = "O";
+});
 // New Game
 newGameBtn.addEventListener("click", () => {
   boxs.forEach((box) => {
     box.innerHTML = "";
-    oWinCount.textContent = 0
-    xWinCount.textContent = 0
+    oWinCount.textContent = 0;
+    xWinCount.textContent = 0;
     box.disabled = false;
-  })
-})
+  });
+});
+
+// Game Start User Name Input
+const startGame = document.querySelector("#startGame");
+const userInput = document.querySelector("#userInput");
+startGame.addEventListener("click", () => {
+  playUser1.textContent = user1.value;
+  playUser2.textContent = user2.value;
+  userInput.style.display = "none";
+  document.querySelector(".game-Container").style.pointerEvents = "all";
+  document.querySelector(".game-Container").style.opacity = "1";
+});
