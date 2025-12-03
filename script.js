@@ -59,8 +59,8 @@ function checkWin() {
   let p2 = parseInt(oWinCount.textContent);
   const cruntWin = document.querySelector("#cruntWin");
   if (p1 < p2) cruntWin.textContent = playUser1.textContent;
-  else if (p1 < p2) cruntWin.textContent = playUser2.textContent;
-  else cruntWin.textContent = "n/a";
+  else if (p1 > p2) cruntWin.textContent = playUser2.textContent;
+  else cruntWin.textContent = "Draw!";
 }
 // Play Again
 playAgainBtn.addEventListener("click", () => {
