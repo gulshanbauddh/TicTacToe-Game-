@@ -99,6 +99,8 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /* After College */
@@ -160,4 +162,8 @@ main {
 .user input:focus {
   outline: black;
   box-shadow: 0 0 5px rgba(234, 230, 0, 0.5);
+}
+
+.cruntWin {
+  color: rgb(35, 45, 245);
 }

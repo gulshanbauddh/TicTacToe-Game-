@@ -69,8 +69,15 @@ playAgainBtn.addEventListener("click", () => {
     box.disabled = false;
     // current win for current Win Chance-
   });
-  if (currentWinX) chance = "X";
-  else chance = "O";
+  if (currentWinX) {
+    chance = "X";
+    playUser2.parentElement.style.color = "#06ea06";
+    playUser1.parentElement.style.color = "#ff5454";
+  } else {
+    chance = "O";
+    playUser2.parentElement.style.color = "#ff5454";
+    playUser1.parentElement.style.color = "#06ea06";
+  }
 });
 // New Game
 newGameBtn.addEventListener("click", () => {
@@ -80,6 +87,7 @@ newGameBtn.addEventListener("click", () => {
     xWinCount.textContent = 0;
     box.disabled = false;
   });
+  chance="O"
 });
 
 // Game Start User Name Input
