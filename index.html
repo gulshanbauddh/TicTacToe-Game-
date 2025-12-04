@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tik Tok Toi</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="./responsive.css" />
   </head>
 
   <body>
@@ -15,10 +15,12 @@
         <h1>Tik Tak Tik</h1>
         <div class="winCount">
           <p>
-            <span id="playUser1">Gulshan</span> ( O ) Wins: <span id="oWin">0</span>
+            <span id="playUser1">Gulshan</span> ( O ) Wins:
+            <span id="oWin">0</span>
           </p>
           <p>
-            <span id="playUser2">Bauddh</span> ( X ) Wins: <span id="xWin">0</span>
+            <span id="playUser2">Bauddh</span> ( X ) Wins:
+            <span id="xWin">0</span>
           </p>
           <p class="cruntWin">
             Current Winner : <span id="cruntWin">n/a</span>
@@ -42,25 +44,25 @@
       </div>
       <!-- +++++++++ pop up ++++++++++++++ -->
       <div id="userInput">
-          <div class="user">
-            <label for="user1">Player Name 1</label>
-            <input type="text" placeholder="User1" id="user1" />
-          </div>
-          <div class="user">
-            <label for="user2">Player name 2</label>
-            <input type="text" placeholder="User 2" id="user2" />
-          </div>
-          <button type="button" id="startGame">Start Game</button>
+        <div class="user">
+          <label for="user1">Player Name 1</label>
+          <input type="text" placeholder="User1" id="user1" />
+        </div>
+        <div class="user">
+          <label for="user2">Player name 2</label>
+          <input type="text" placeholder="User 2" id="user2" />
+        </div>
+        <button type="button" id="startGame">Start Game</button>
       </div>
       <!-- Gamer Result -->
       <div id="gameResult">
-        <p>Winner is : Gulshan</p>
+        <p class="playbutton1">Winner </p>
         <div id="controlButton">
-          <button id="newGame">New Game</button>
-          <button id="playAgain">Play Again</button>
+          <button class="playAgain" id="playAgain">Play Again</button>
         </div>
       </div>
     </main>
     <script src="./script.js"></script>
+    <script src="./script1.js"></script>
   </body>
 </html>

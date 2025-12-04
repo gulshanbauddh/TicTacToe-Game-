@@ -47,10 +47,12 @@ function checkWin() {
       if (chance === "X") {
         xWinCount.textContent = parseInt(xWinCount.textContent) + 1;
         currentWinX = true;
+        won();
       } else {
         oWinCount.textContent = parseInt(oWinCount.textContent) + 1;
         boxs.forEach((box) => (box.disabled = true));
         currentWinX = false;
+        won();
       }
     }
   });
@@ -67,17 +69,7 @@ playAgainBtn.addEventListener("click", () => {
   boxs.forEach((box) => {
     box.innerHTML = "";
     box.disabled = false;
-    // current win for current Win Chance-
   });
-  if (currentWinX) {
-    chance = "X";
-    playUser2.parentElement.style.color = "#06ea06";
-    playUser1.parentElement.style.color = "#ff5454";
-  } else {
-    chance = "O";
-    playUser2.parentElement.style.color = "#ff5454";
-    playUser1.parentElement.style.color = "#06ea06";
-  }
 });
 // New Game
 newGameBtn.addEventListener("click", () => {
@@ -87,7 +79,7 @@ newGameBtn.addEventListener("click", () => {
     xWinCount.textContent = 0;
     box.disabled = false;
   });
-  chance="O"
+  chance = "O";
 });
 
 // Game Start User Name Input
@@ -100,3 +92,30 @@ startGame.addEventListener("click", () => {
   document.querySelector(".game-Container").style.pointerEvents = "all";
   document.querySelector(".game-Container").style.opacity = "1";
 });
+
+// Result Pop up
+const x = document.querySelector(".playbutton1");
+function won() {
+  const b1 = document.querySelector(".playAgain");
+  gameResult.style.display = "block"; // Show Won.
+  userInput.style.display = "none"; // Hide user input.
+  x.innerHTML = `Won : ( ${chance} ) ${
+    chance == "O" ? playUser1.textContent : playUser2.textContent
+  }`;
+  b1.addEventListener("click", () => {
+    gameResult.style.display = "none"; // Hide Won.
+    boxs.forEach((box) => {
+      box.textContent = "";
+      box.disabled = false;
+      if (currentWinX) {
+        chance = "X";
+        playUser2.parentElement.style.color = "#06ea06";
+        playUser1.parentElement.style.color = "#ff5454";
+      } else {
+        chance = "O";
+        playUser2.parentElement.style.color = "#ff5454";
+        playUser1.parentElement.style.color = "#06ea06";
+      }
+    });
+  });
+}
