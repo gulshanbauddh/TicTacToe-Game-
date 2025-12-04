@@ -60,8 +60,7 @@ main {
 }
 
 #newGame,
-#playAgain,
-#playAgainResult {
+#playAgain {
   margin-right: 10px;
   padding: 6px 10px;
   font-size: 15px;
@@ -75,8 +74,7 @@ main {
   color: white;
 }
 
-#playAgain,
-#playAgainResult {
+#playAgain {
   background-color: rgb(36, 179, 36);
   color: white;
 }
@@ -85,8 +83,7 @@ main {
   background-color: rgb(204, 0, 0);
 }
 
-#playAgain:hover,
-#playAgainResult:hover {
+#playAgain:hover {
   background-color: rgb(46, 151, 46);
 }
 
@@ -121,7 +118,7 @@ main {
   display: grid;
   text-align: center;
   align-items: center;
-  /* display: none; */
+  display: none;
 }
 
 /* // User Input */
@@ -135,16 +132,14 @@ main {
   flex-direction: column;
   border-radius: 10px;
   position: fixed;
-  display: none;
+  /* display: none; */
 }
-
 .user {
   display: grid;
   text-align: center;
   color: white;
   font-weight: 600;
 }
-
 .user input {
   border: none;
   border-radius: 5px;

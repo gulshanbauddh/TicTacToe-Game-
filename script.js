@@ -7,11 +7,6 @@ const user1 = document.getElementById("user1");
 const user2 = document.getElementById("user2");
 const playUser1 = document.getElementById("playUser1");
 const playUser2 = document.getElementById("playUser2");
-// Game Result
-const winnerAnnous = document.querySelector(".winnerAnnous");
-const playAgainResult = document.getElementById("playAgainResult");
-
-
 let currentWinX = true;
 let chance = "O";
 // winning patern-
@@ -52,39 +47,13 @@ function checkWin() {
       if (chance === "X") {
         xWinCount.textContent = parseInt(xWinCount.textContent) + 1;
         currentWinX = true;
-        winnerAnnous(winPlayer);
       } else {
         oWinCount.textContent = parseInt(oWinCount.textContent) + 1;
         boxs.forEach((box) => (box.disabled = true));
         currentWinX = false;
-        winnerAnnous(winPlayer);
       }
     }
   });
-
-  // Result pop up winnerAnnous
-  function winnerAnnous(winPlayer) {
-    winnerAnnous.innerHTML = ("Won : " + winPlayer);
-  }
-
-  playAgainResult.addEventListener("click", () => {
-    console.log("ggusdh");
-    
-    alert("hjdgfh");
-  })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   let p1 = parseInt(xWinCount.textContent);
   let p2 = parseInt(oWinCount.textContent);
@@ -118,7 +87,7 @@ newGameBtn.addEventListener("click", () => {
     xWinCount.textContent = 0;
     box.disabled = false;
   });
-  chance = "O"
+  chance="O"
 });
 
 // Game Start User Name Input
@@ -131,5 +100,3 @@ startGame.addEventListener("click", () => {
   document.querySelector(".game-Container").style.pointerEvents = "all";
   document.querySelector(".game-Container").style.opacity = "1";
 });
-
-// gameResult PoP up
